@@ -1,0 +1,189 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{caption}
+
+\title{CS 5720: Design and Analysis of Algorithms \\ Project 0 Report}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+The goal of this project is to visualize and empirically test the order of growth of different functions using Python. We will plot several functions and their ratios to determine if they have the same or different orders of growth, based on Big-O notation. This report contains plots and interpretations for each deliverable specified in the project assignment.
+
+\section{Deliverable 1: Visualizing Functions with the Same Order of Growth}
+
+\subsection{Functions}
+The functions under consideration are:
+\[
+f(n) = \frac{1}{2}n(n - 1) + 10, \quad g(n) = n^2
+\]
+
+\subsection{Plots and Interpretation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plot_fn_gn_1_to_10.png}
+    \caption{Plot of $f(n)$ and $g(n)$ for $n$ ranging from 1 to 10.}
+    \label{fig:fn_gn_1_10}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plot_fn_gn_1_to_10e6.png}
+    \caption{Plot of $f(n)$ and $g(n)$ for $n$ ranging from 1 to $10^6$.}
+    \label{fig:fn_gn_1_10e6}
+\end{figure}
+
+\textbf{Interpretation:} In Figure \ref{fig:fn_gn_1_10}, the functions $f(n)$ and $g(n)$ appear to have different growth rates for small values of $n$. However, in Figure \ref{fig:fn_gn_1_10e6}, as $n$ becomes very large, $f(n)$ and $g(n)$ show similar growth rates, indicating that they are in the same order of growth, $\Theta(n^2)$.
+
+\section{Deliverable 2: Empirical Limit Test}
+
+\subsection{Empirical Limit Test}
+
+We plot the ratio $\frac{f(n)}{g(n)}$ to empirically test the limit:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{ratio_fn_gn_1_to_10.png}
+    \caption{Plot of $\frac{f(n)}{g(n)}$ for $n$ ranging from 1 to 10.}
+    \label{fig:ratio_fn_gn_1_10}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{ratio_fn_gn_1_to_10e6.png}
+    \caption{Plot of $\frac{f(n)}{g(n)}$ for $n$ ranging from 1 to $10^6$.}
+    \label{fig:ratio_fn_gn_1_10e6}
+\end{figure}
+
+\textbf{Interpretation:} In Figure \ref{fig:ratio_fn_gn_1_10}, the ratio $\frac{f(n)}{g(n)}$ varies significantly for small values of $n$. In Figure \ref{fig:ratio_fn_gn_1_10e6}, the ratio approaches a constant value as $n$ increases, confirming that $f(n)$ and $g(n)$ are indeed in the same order of growth.
+
+\section{Deliverable 3: Functions with Different Orders of Growth}
+
+\subsection{Functions}
+\[
+f(n) = \sqrt{n^5 + 3n + 1}, \quad g(n) = 5n^2
+\]
+
+\subsection{Plots and Interpretation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plot_fn2_gn2_1_to_10.png}
+    \caption{Plot of $f(n)$ and $g(n)$ for $n$ ranging from 1 to 10.}
+    \label{fig:fn2_gn2_1_10}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plot_fn2_gn2_1_to_10e6.png}
+    \caption{Plot of $f(n)$ and $g(n)$ for $n$ ranging from 1 to $10^6$.}
+    \label{fig:fn2_gn2_1_10e6}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{ratio_fn2_gn2_1_to_10.png}
+    \caption{Plot of $\frac{f(n)}{g(n)}$ for $n$ ranging from 1 to 10.}
+    \label{fig:ratio_fn2_gn2_1_10}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{ratio_fn2_gn2_1_to_10e6.png}
+    \caption{Plot of $\frac{f(n)}{g(n)}$ for $n$ ranging from 1 to $10^6$.}
+    \label{fig:ratio_fn2_gn2_1_10e6}
+\end{figure}
+
+\textbf{Interpretation:} The plots clearly show that $f(n)$ grows faster than $g(n)$, confirming that $f(n) \in \Theta(n^{2.5})$ while $g(n) \in \Theta(n^2)$. Thus, $f(n)$ and $g(n)$ have different orders of growth.
+
+\section{Deliverable 4: Functions with Slower Growth Rates}
+
+\subsection{Functions}
+\[
+f(n) = \log n, \quad g(n) = \sqrt{n}
+\]
+
+\subsection{Plots and Interpretation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plot_fn3_gn3_2_to_10.png}
+    \caption{Plot of $f(n)$ and $g(n)$ for $n$ ranging from 2 to 10.}
+    \label{fig:fn3_gn3_2_10}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plot_fn3_gn3_2_to_10e6.png}
+    \caption{Plot of $f(n)$ and $g(n)$ for $n$ ranging from 2 to $10^6$.}
+    \label{fig:fn3_gn3_2_10e6}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{ratio_fn3_gn3_2_to_10.png}
+    \caption{Plot of $\frac{f(n)}{g(n)}$ for $n$ ranging from 2 to 10.}
+    \label{fig:ratio_fn3_gn3_2_10}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{ratio_fn3_gn3_2_to_10e6.png}
+    \caption{Plot of $\frac{f(n)}{g(n)}$ for $n$ ranging from 2 to $10^6$.}
+    \label{fig:ratio_fn3_gn3_2_10e6}
+\end{figure}
+
+\textbf{Interpretation:} The plots indicate that $g(n) = \sqrt{n}$ grows faster than $f(n) = \log n$, confirming that $g(n) \in \Theta(\sqrt{n})$ and $f(n) \in \Theta(\log n)$. Thus, they have different orders of growth.
+
+\section{Deliverable 5: Logarithmic Functions with the Same Order of Growth}
+
+\subsection{Functions}
+\[
+f(n) = \log_2 n, \quad g(n) = \log_{10} n
+\]
+
+\subsection{Plots and Interpretation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plot_fn4_gn4_2_to_10.png}
+    \caption{Plot of $f(n)$ and $g(n)$ for $n$ ranging from 2 to 10.}
+    \label{fig:fn4_gn4_2_10}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plot_fn4_gn4_2_to_10e6.png}
+    \caption{Plot of $f(n)$ and $g(n)$ for $n$ ranging from 2 to $10^6$.}
+    \label{fig:fn4_gn4_2_10e6}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{ratio_fn4_gn4_2_to_10.png}
+    \caption{Plot of $\frac{f(n)}{g(n)}$ for $n$ ranging from 2 to 10.}
+    \label{fig:ratio_fn4_gn4_2_10}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{ratio_fn4_gn4_2_to_10e6.png}
+    \caption{Plot of $\frac{f(n)}{g(n)}$ for $n$ ranging from 2 to $10^6$.}
+    \label{fig:ratio_fn4_gn4_2_10e6}
+\end{figure}
+
+\textbf{Interpretation:} As expected, both $f(n) = \log_2 n$ and $g(n) = \log_{10} n$ grow at the same rate. The ratio plot confirms that the ratio is a constant for large $n$, indicating that both functions are in the same order of growth, $\Theta(\log n)$.
+
+\section{Conclusion}
+
+This project successfully demonstrates how different functions can be analyzed and compared in terms of their asymptotic growth rates. By plotting the functions and their ratios over various ranges, we can visually confirm their order of growth in Big-O notation.
+
+\end{document}
