@@ -9,7 +9,8 @@ git clone https://github.com/descon-uccs/CS5720-Project0-Fall2024.git
 # generate the figure files:
 python second_code.py
 
-# compile the PDF document
+# compile the PDF document (twice so it updates all the references)
+pdflatex main.tex
 pdflatex main.tex
 ```
 
