@@ -5,6 +5,7 @@ To generate GPT-4o's attempt at CS 5720 Project 0, complete the following steps:
 ```shell
 # clone this repo:
 git clone https://github.com/descon-uccs/CS5720-Project0-Fall2024.git
+cd CS5720-Project0-Fall2024
 
 # generate the figure files:
 python second_code.py
